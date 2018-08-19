@@ -17,14 +17,14 @@ from keras.layers.convolutional import * # les résaux convolutifs pour l'analys
 
 from keras.applications import imagenet_utils # du preprocessing
 
-import tensorflowjs as tfjs # tensorflow js (conversion à la fin pour le web)
+#import tensorflowjs as tfjs # tensorflow js (conversion à la fin pour le web)
 
 from keras.optimizers import Adam # sous programme responsable de la backpropagation
 from keras.metrics import categorical_crossentropy, sparse_categorical_crossentropy, binary_crossentropy #différente fonctions de coûts
 from keras.preprocessing.image import ImageDataGenerator # du preprocessing
 
 from matplotlib import pyplot as plt # des graphiques
-get_ipython().run_line_magic('matplotlib', 'inline')
+#get_ipython().run_line_magic('matplotlib', 'inline')
 from sklearn.metrics import confusion_matrix # des graphiques
 
 from keras.utils.generic_utils import CustomObjectScope
@@ -93,7 +93,7 @@ def plots(ims,figsize=(12,6),rows=1,interp=False,titles=None):
 
 
 with CustomObjectScope({'relu6': keras.applications.mobilenet.relu6,'DepthwiseConv2D': keras.applications.mobilenet.DepthwiseConv2D}):
-    model = load_model('deepSoviet.h5')
+    model = load_model('deepSoviet_next.h5')
 model.summary() # on regarde son architecture
 print("DEEPSOVIET : IMPORTATION COMPLETE")
 
@@ -149,5 +149,5 @@ model.save("deepSoviet_next.h5")
 # In[11]:
 
 
-tfjs.converters.save_keras_model(model,"TFJS_NEXT")
+#tfjs.converters.save_keras_model(model,"TFJS_NEXT")
 
