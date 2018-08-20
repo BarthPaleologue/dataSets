@@ -11,6 +11,9 @@ import keras #le module de deep learning
 from keras import backend as K #support de Keras (Tensorflow)
 from keras.models import Sequential, load_model, Model # de quoi créer un modèle (et en charger un, au besoin)
 
+
+from keras.utils.generic_utils import CustomObjectScope
+
 from keras.layers.core import Dense, Flatten # des couches de neurones simples
 from keras.layers.normalization import BatchNormalization # du preprocessing d'image
 from keras.layers.convolutional import * # les résaux convolutifs pour l'analyse d'image
